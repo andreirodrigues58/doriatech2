@@ -1,0 +1,204 @@
+/* Reset e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0edbf6;
+    padding-top: 80px;
+}
+
+/* Header e navegação responsiva */
+#navegacao {
+    display: flex;
+    background-color: #000;
+    border-radius: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-header {
+    width: 150px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu_link {
+    text-decoration: none;
+    color: #0edbf6;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    #navegacao {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .menu {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .logo-header {
+        margin-bottom: 10px;
+    }
+}
+
+/* Seção Nossos Serviços */
+.nossos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.troca-frontal, .troca-bateria, .troca-conector, .troca-reparo, .troca-serv, .troca-acessorio {
+    background-color: #000;
+    padding: 15px;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 15px;
+    text-align: center;
+    color: #0edbf6;
+    font-size: 12px;
+    word-wrap: break-word;
+    transition: transform 0.3s ease-in-out;
+}
+
+.troca-frontal:hover, .troca-bateria:hover, .troca-conector:hover, .troca-reparo:hover, .troca-serv:hover, .troca-acessorio:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .nossos-caixa {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Seção Delivery */
+.cta-delivery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.img-delivery {
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+
+.delivery {
+    color: #fff;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Feedbacks */
+#feedback {
+    text-align: center;
+    background-color: #FF3B30;
+    padding: 20px;
+}
+
+.feedbacks-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feedbacks-todos {
+    width: 250px; /* Aumentei a largura das imagens */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .feedbacks-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feedbacks-todos {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+/* Contatos */
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contato-item a {
+    color: #0edbf6;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .contato-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contato-item {
+        justify-content: center;
+    }
+}
+
+/* Footer Responsivo */
+#footer {
+    background-color: #000;
+    color: #0edbf6;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative; /* Ajustei para que ele fique visível corretamente em todas as telas */
+}
+
+/* Estilo para a seção de Delivery */
+.cta-delivery {
+    padding: 15px;
+}
+
+.delivery {
+    font-size: 16px; /* Reduz o tamanho da fonte em telas pequenas */
+    white-space: normal; /* Permite que o texto quebre normalmente em telas pequenas */
+}
