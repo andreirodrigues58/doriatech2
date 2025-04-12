@@ -1,0 +1,478 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+body.dark html{
+    scroll-behavior: smooth;
+}
+
+body.dark{
+    background-color: #000000;
+}
+
+/* HEADER */
+body.dark .logo-header{
+    filter: brightness(200%) contrast(100%) saturate(0) sepia(100%) hue-rotate(180deg);
+}
+
+body.dark .menu_link{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+body.dark #navegacao{
+    display: flex;
+    background-color: #FF3B30;
+    border-radius: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    padding: 24px 30px;
+    justify-content: space-between;
+}
+
+body.dark .menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    justify-content: center; 
+    flex: 1;
+}
+
+body.dark .menu_link:hover{
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+/* Menu Hamburger */
+body.dark .sidebar{
+    display: none;
+}
+body.dark #navegacao button{
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+body.dark .menu-icon{
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+body.dark .fechar-btn{
+    width: 30px;
+    height: 30px;
+}
+
+/* CELULAR DIVISORIO */
+body.dark .celular-div{
+    filter: invert(1); /* inverte as cores da imagem para adaptá-la ao modo escuro */
+}
+
+/* BOTAO ON/OFF */
+.botao.dark{
+    background-color: #ffffff;
+    flex-direction: row-reverse; /* Inverte: agora fica [bolinha] [OFF] */
+}
+
+.botao.dark .indicar{
+    background-color: #000000;
+    transform: translateX(0); /* Mantém no lugar */
+}
+
+.botao.dark .texto-onoff{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+   
+.botao.dark .darkmodoff{
+    display: block;
+    font-size: 15px;
+    margin: 2px 30px;
+    color: #FF3B30;
+        
+}
+ 
+.botao.dark .darkmodon{
+       display: none;
+}
+
+
+/* TITULOS */
+body.dark .quem-titulo, body.dark .nossos-titulo{
+    color: #ffffff;
+    text-align: center;   
+}
+
+body.dark .quem-caixa{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* NOSSOS SERVIÇOS*/
+body.dark .troca-frontal,
+body.dark .troca-bateria,
+body.dark .troca-conector,
+body.dark .troca-reparo,
+body.dark .troca-serv,
+body.dark .troca-acessorio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF3B30;
+    padding: 20px;
+    width: 220px;
+    border: #0edbf6;
+    border-radius: 25px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+body.dark .frontal,
+body.dark .bateria,
+body.dark .conector,
+body.dark .reparo,
+body.dark .serv,
+body.dark .acessorio,
+body.dark .button-cards {
+    opacity: 1; 
+    visibility: visible; 
+    color: #ffffff;
+}
+
+
+body.dark .troca-frontal,
+body.dark .troca-bateria,
+body.dark .troca-conector,
+body.dark .troca-reparo,
+body.dark .troca-serv,
+body.dark .troca-acessorio {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+body.dark .button-cards {
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: #000000;
+    font-weight: bold;
+}
+
+body.dark .button-a {
+    text-decoration: none;
+    list-style: none;
+    color: #ffffff;
+    align-items: center;
+}
+
+/* CTA*/
+
+body.dark .cta-delivery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 10px;
+    flex-wrap: wrap; 
+}
+
+body.dark .img-delivery {
+    width: 350px; 
+    margin-right: 20px; 
+}
+
+body.dark .delivery {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    color: #0edbf6;
+    text-align: center;
+    font-size: 25px;
+    gap: 20px; 
+    flex-grow: 1; 
+}
+
+body.dark .button-cards-cta {
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #FF3B30;
+    margin-top: 20px;  
+}
+
+/* PRODUTOS*/
+
+
+body.dark .nossos-produtos {
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+
+
+/* PRODUTOS VENDAS */
+
+body.dark .prod-vendas {
+    background-color: #FF3B30;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: 330px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+body.dark  .vendas {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}
+
+/* PRODUTOS ACESSORIOS */
+body.dark .prod-acesso {
+    background-color: #FF3B30;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: 330px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+body.dark .acesso {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}
+
+/* PRODUTOS CONSERTO */
+
+body.dark .prod-conserto {
+    background-color: #FF3B30;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: 330px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+body.dark .conserto {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}
+
+/* BOTAO PRODUTOS TODOS */
+body.dark .button-cards-vend {
+    font-weight: bold;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #000000;
+    margin-top: 20px; 
+    width: 100%; 
+    max-width: 200px; 
+    text-align: center; 
+}
+
+body.dark .prod-vendas,
+body.dark .prod-acesso,
+body.dark .prod-conserto {
+    min-height: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* FEEDBACK */
+body.dark .nossos-feedback{
+color: #ffffff;
+}
+
+
+body.dark #feedback {
+    text-align: center; 
+    background-color: #000000; 
+    border-radius: 15px;
+}
+
+body.dark .feedbacks-container {
+padding: 30px;
+display: flex; 
+justify-content: center; 
+gap: 20px; 
+flex-wrap: wrap; 
+}
+
+body.dark .feedbacks-todos {
+width: auto; 
+height: 300px; 
+border-radius: 10px; 
+}
+
+
+/* FORM */
+body.dark .form-text {
+    color: #ffffff;
+    text-align: center;   
+}
+
+body.dark #Forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+body.dark .form-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 30px 20px;
+    background-color: #0edbf6;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+body.dark #Forms input, body.dark #Forms select, body.dark #Forms textarea {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    font-weight: bold;
+}
+
+body.dark .textos-cima-form {
+    text-align: center;
+    font-weight: bold;
+}
+
+body.dark #Forms button {
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body.dark #Forms button:hover {
+    color: #ffffff;
+    background-color: #FF3B30;
+}
+
+/* FOOTER */
+body.dark #footer {
+    background-color: #FF3B30; 
+    border-radius: 15px;
+    color: #0edbf6; 
+    text-align: center; 
+    padding: 30px 20px; 
+    margin-top: 40px; 
+    width: 100%; 
+    position: relative; 
+}
+
+/* FOOTER TITULOS */
+body.dark .contato-titulo {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* FOOTER LINKS E ICONES*/
+body.dark .contato-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+body.dark .contato-titulo, body.dark .dark-h3{
+    color: #ffffff;
+}
+
+body.dark .contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.dark .icone {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    overflow: hidden; 
+    display: block; 
+    border: 2px solid #ffffff; 
+}
+
+body.dark .contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.dark .contato-item a {
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 16px;
+    transition: 0.3s; 
+}
+
+body.dark .contato-item a:hover {
+    color: #0edbf6; 
+}
