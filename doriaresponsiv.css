@@ -48,6 +48,75 @@ body {
     font-size: 14px;
     white-space: nowrap;
 }
+/* Menu Hamburger */
+.sidebar{
+    display: none;
+}
+#navegacao button{
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+.menu-icon{
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+@media (max-width: 768px) {
+    .sidebar{
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.82);
+        border-radius: 0px 30px 30px 0px;
+        height: 100vh;
+        width: 60%;
+        border: solid white 1px;
+       
+    }
+    #navegacao button{
+        display: block;
+    }
+    .sidebar img{
+
+        width: 40px;
+        height: 40px;
+        filter: invert(1);
+    }
+    .sidebar #fechar-btn{
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+    
+    #navegacao {
+        flex-direction: row;
+        align-items: center;
+        padding: 11px;
+    }
+    .menu {
+        display: none;
+        align-items: baseline;
+        flex-direction: column;
+        
+        gap: 40px;
+    }
+    .menu li{
+        margin-left: 2em;
+        
+    }
+    .menu li a{
+        font-size: 1.5rem;
+    }
+    .logo-header {
+        margin-bottom: 10px;
+    }
+}
 
 /* Seção Nossos Serviços */
 .nossos-caixa {
@@ -173,16 +242,5 @@ body {
     justify-content: center;
 }
 
-#navegacao {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-.menu {
-    flex-direction: row;
-    gap: 10px;
-}
-.logo-header {
-    margin-bottom: 10px;
-}
+
 }

@@ -13,16 +13,27 @@
     
     <header>
         <nav id="navegacao">
-            <img src="img/logo-removebg-preview.png" alt="logofoto" class="logo-header">
-            <ul class="menu">
-                <li><a href="#quem-so" class="menu_link">Quem Somos</a></li>
-                <li><a href="#serv" class="menu_link">Serviços</a></li>
-                <li><a href="#prod" class="menu_link">Produtos</a></li>
-                <li><a href="#feedback" class="menu_link">Feedback</a></li>
-                <li><a href="#footer" class="menu_link">Contatos</a></li>
-            </ul>
+          <div id="menu-sidebar" class="sidebar">
+              <button id="fechar-btn"><img src="img/close.svg" alt=""></button>
+          </div>
+  
+          <button id="menu-btn">
+            <img class="menu-icon" src="img/menu.svg" alt="" />
+          </button>
+          <img
+            src="img/logo-removebg-preview.png"
+            alt="logofoto"
+            class="logo-header"
+          />
+          <ul id="menu-ul" class="menu">
+            <li><a href="#quem-so" class="menu_link">Quem Somos</a></li>
+            <li><a href="#serv" class="menu_link">Serviços</a></li>
+            <li><a href="#prod" class="menu_link">Produtos</a></li>
+            <li><a href="#feedback" class="menu_link">Feedback</a></li>
+            <li><a href="#footer" class="menu_link">Contatos</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     
     <main class="conteiner">
         <div id="quem-so" class="Quem-somos">
@@ -249,5 +260,6 @@
     </section>
 
     <script src="doriajava.js"></script>
+    <script src="responsiv.js"></script>
 </body>
 </html>
