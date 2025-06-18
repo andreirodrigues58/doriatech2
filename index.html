@@ -54,7 +54,7 @@
     <section id="serv">
         <h1 class="nossos-titulo"><strong>Nossos Serviços</strong></h1>
         <img src="img/divcelular-removebg-preview.png" alt="celular" class="celular-div">
-        <div class="nossos-caixa">
+        <div class="nossos-caixa" id="nossos-caixa">
             <section class="troca-frontal">
                 <div class="frontal">
                     <h3><b>Troca de Frontal</b></h3>
@@ -124,9 +124,9 @@
         </div>
     </section>
 
-    <section class="cta-delivery">
+    <section class="cta-delivery" id="cta-delivery">
         <img src="img/motoboy-removebg-preview.png" alt="motoboy em uma moto" class="img-delivery">  
-       <div class="delivery">      
+       <div class="delivery">
         <h3>
             Buscamos, consertamos e entregamos no mesmo dia. <br>Rápido, Fácil e Sem Complicação!🏍️📱
         </h3>
@@ -138,7 +138,7 @@
         <h1 class="nossos-produtos"><strong>Produtos</strong></h1>
         <img src="img/divcelular-removebg-preview.png" alt="celular" class="celular-div">
 
-        <section class="nossos-produtos">
+        <section class="nossos-produtos" id="nossos-produtos">
             <div class="prod-vendas">
                 <div class="vendas">
                     <h3><b>Venda de celulares</b></h3>
@@ -310,6 +310,41 @@
 
         function setFont(size) {
             html.style.fontSize = size + '%';
+            [
+                '#main-content',
+                '#serv',
+                '#prod',
+                '#feedback',
+                '#Forms',
+                '#footer',
+                '#nossos-caixa',
+                '#cta-delivery',
+                '#nossos-produtos'
+            ].forEach(function(sel) {
+                var el = document.querySelector(sel);
+                if (el) el.style.fontSize = 'inherit';
+            });
+            // Aplica também em todos os filhos de .nossos-produtos
+            var np = document.getElementById('nossos-produtos');
+            if (np) {
+                np.querySelectorAll('*').forEach(function(child) {
+                    child.style.fontSize = 'inherit';
+                });
+            }
+            // Aplica também em todos os filhos de #nossos-caixa
+            var nc = document.getElementById('nossos-caixa');
+            if (nc) {
+                nc.querySelectorAll('*').forEach(function(child) {
+                    child.style.fontSize = 'inherit';
+                });
+            }
+            // Aplica também em todos os filhos de #cta-delivery
+            var cta = document.getElementById('cta-delivery');
+            if (cta) {
+                cta.querySelectorAll('*').forEach(function(child) {
+                    child.style.fontSize = 'inherit';
+                });
+            }
         }
 
         document.getElementById('font-inc').onclick = function() {

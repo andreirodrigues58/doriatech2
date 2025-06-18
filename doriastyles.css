@@ -14,6 +14,52 @@ body {
     transition: background 0.5s;
 }
 
+/* Desabilita o scroll horizontal do site */
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100vw;
+}
+
+/* Garante que elementos principais não ultrapassem a largura da tela */
+.conteiner,
+#navegacao,
+.Quem-somos,
+.nossos-caixa,
+.nossos-produtos,
+.cta-delivery,
+#footer,
+.google-maps-api {
+    max-width: none;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+
+/* Ajuste para caixas responsivas não ultrapassarem a tela */
+.nossos-caixa > section,
+.prod-vendas,
+.prod-acesso,
+.prod-conserto,
+.troca-frontal,
+.troca-bateria,
+.troca-conector,
+.troca-reparo,
+.troca-serv,
+.troca-acessorio {
+    max-width: none;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+
+/* Ajuste para imagens grandes não causarem scroll horizontal */
+img,
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+}
+
 /* BOTAO ON/OFF */
 .botao {
     position: fixed;
@@ -730,4 +776,101 @@ a:focus {
 html {
     scrollbar-width: thin;
     scrollbar-color: #0edbf6 #e0f7fa;
+}
+
+/* PRODUTOS VENDAS, ACESSORIOS, CONSERTO - Responsivo ao texto e fonte */
+.prod-vendas,
+.prod-acesso,
+.prod-conserto,
+.troca-frontal,
+.troca-bateria,
+.troca-conector,
+.troca-reparo,
+.troca-serv,
+.troca-acessorio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    min-width: 220px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: auto;
+    overflow: visible;
+    /* Remove qualquer height/min-height fixa */
+}
+
+.nossos-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Ajuste para as sections dentro de .nossos-caixa ficarem responsivas ao texto e fonte */
+.nossos-caixa > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    font-size: 1.18rem;
+}
+
+.nossos-caixa > section > div {
+    flex: 1 1 auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    font-size: 1.13rem;
+}
+
+/* Centraliza e alinha botões e textos internos */
+.nossos-caixa h3,
+.nossos-caixa p,
+.nossos-caixa button,
+.nossos-caixa a,
+.nossos-caixa br {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Ajuste para garantir espaçamento entre elementos */
+.nossos-caixa h3 {
+    margin-bottom: 8px;
+}
+.nossos-caixa p {
+    margin-bottom: 8px;
+}
+.nossos-caixa button {
+    margin-top: 8px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+    .nossos-caixa > section {
+        width: 95vw;
+        max-width: 98vw;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
