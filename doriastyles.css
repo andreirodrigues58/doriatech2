@@ -1,67 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Exo 2', sans-serif;
-
+    font-family: "Exo 2", sans-serif;
 }
 
-body{
+/* --- MELHORIAS GERAIS DE DESIGN E ACESSIBILIDADE --- */
+
+/* Fundo com leve gradiente para dar mais vida */
+body {
     background-color: #0edbf6;
-    padding-top: 80px; 
-    transition: .5s;
+    padding-top: 80px;
+    transition: background 0.5s;
 }
-
 
 /* BOTAO ON/OFF */
-.botao{
+.botao {
     position: fixed;
     cursor: pointer;
-    top: 115px; 
-    right: 20px; 
-    width: 70px; 
+    top: 115px;
+    right: 20px;
+    width: 70px;
     height: 30px;
     padding: 0 5px;
     border-radius: 25px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
 }
 
-.botao .indicar{
+.botao .indicar {
     width: 20px;
     height: 20px;
     background-color: #0edbf6;
     border-radius: 50%;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.botao .texto-onoff{
+.botao .texto-onoff {
     display: flex;
     align-items: center;
 }
 
-.darkmodon{
+.darkmodon {
     display: block;
     font-size: 15px;
     margin: 2px 30px;
     color: #0edbf6;
 }
 
-.darkmodoff{
+.darkmodoff {
     display: none;
 }
 
 /* HEADER */
-html{
+html {
     scroll-behavior: smooth;
 }
 
-#navegacao{
+#navegacao {
     display: flex;
     background-color: #000000;
     border-radius: 10px;
@@ -71,75 +72,88 @@ html{
     top: 0;
     padding: 24px 30px;
     justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.logo-header{
+.logo-header {
     display: flex;
     align-items: center;
     width: 200px;
+    transition: transform 0.2s;
+}
+.logo-header:hover {
+    transform: scale(1.05) rotate(-2deg);
 }
 
-.menu{
+/* Menus com efeito de foco para acessibilidade */
+.menu_link:focus {
+    outline: 2px solid #ff3b30;
+    outline-offset: 2px;
+}
+
+.menu {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 35px;
-    justify-content: center; 
+    justify-content: center;
     flex: 1;
 }
 
-.menu_link{
+.menu_link {
     text-decoration: none;
     color: #0edbf6;
     font-weight: bold;
 }
 
-.menu_link:hover{
+.menu_link:hover {
     text-decoration: underline;
     text-underline-offset: 10px;
-    color: #FF3B30;
+    color: #ff3b30;
     cursor: pointer;
 }
 
 /* QUEM SOMOS*/
-.conteiner{
+.conteiner {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Quem-somos{
+.Quem-somos {
     padding: 50px;
-    margin-top: 80px; 
+    margin-top: 80px;
 }
 
-.quem-titulo{
-    text-align: center;   
+.quem-titulo {
+    text-align: center;
 }
 
-.celular-div{
-    display: block;  
-    margin: 0 auto;  
-    width: 50px;    
-    height: auto;    
+.celular-div {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: auto;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.quem-caixa{
+.quem-caixa {
     color: #000000;
     text-align: center;
     font-weight: bold;
+    margin-top: 18px;
+    padding: 0 10px;
 }
 
 /* NOSSOS SERVIÇOS*/
 
-.nossos-caixa{
+.nossos-caixa {
     display: flex;
     justify-content: center;
 }
 
-.nossos-titulo{
+.nossos-titulo {
     text-align: center;
 }
 
@@ -171,11 +185,10 @@ html{
 .serv,
 .acessorio,
 .button-cards {
-    opacity: 1; 
-    visibility: visible; 
-    color: #FF3B30;
+    opacity: 1;
+    visibility: visible;
+    color: #ff3b30;
 }
-
 
 .troca-frontal,
 .troca-bateria,
@@ -195,6 +208,14 @@ html{
     padding: 4px;
     cursor: pointer;
     background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.button-cards:hover {
+    background: #0edbf6;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(14, 219, 246, 0.15);
+    transform: translateY(-2px) scale(1.04);
 }
 
 .button-a {
@@ -204,34 +225,33 @@ html{
     align-items: center;
 }
 
-
 /* CTA*/
 .cta-delivery {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     margin: 20px auto;
     padding: 10px;
     background-color: #000000;
     border-radius: 10px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .img-delivery {
-    width: 350px; 
-    margin-right: 20px; 
+    width: 350px;
+    margin-right: 20px;
 }
 
 .delivery {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     color: #ffffff;
     text-align: center;
     font-size: 25px;
-    gap: 20px; 
-    flex-grow: 1; 
+    gap: 20px;
+    flex-grow: 1;
 }
 
 .button-cards-cta {
@@ -242,7 +262,7 @@ html{
     padding: 10px 20px;
     cursor: pointer;
     background-color: #ffffff;
-    margin-top: 20px;  
+    margin-top: 20px;
 }
 
 /* PRODUTOS */
@@ -252,16 +272,16 @@ html{
     margin: 0;
     margin-bottom: 30px;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 20px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* PRODUTOS VENDAS */
 
 .prod-vendas {
     background-color: #000000;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -274,7 +294,7 @@ html{
 
 .vendas {
     text-align: center;
-    color: #FF3B30;
+    color: #ff3b30;
     font-size: 16px;
     word-wrap: break-word;
     white-space: normal;
@@ -284,8 +304,8 @@ html{
 /* PRODUTOS ACESSORIOS */
 .prod-acesso {
     background-color: #000000;
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -297,21 +317,19 @@ html{
 
 .acesso {
     text-align: center;
-    color: #FF3B30;
+    color: #ff3b30;
     font-size: 16px;
     word-wrap: break-word;
     white-space: normal;
     padding: 10px;
 }
 
-
-
 /* PRODUTOS CONSERTO */
 
 .prod-conserto {
     background-color: #000000;
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -323,7 +341,7 @@ html{
 
 .conserto {
     text-align: center;
-    color: #FF3B30;
+    color: #ff3b30;
     font-size: 16px;
     word-wrap: break-word;
     white-space: normal;
@@ -333,7 +351,7 @@ html{
 .prod-vendas,
 .prod-acesso,
 .prod-conserto {
-    min-height: 300px; 
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -350,71 +368,74 @@ html{
     padding: 10px 20px;
     cursor: pointer;
     background-color: #ffffff;
-    margin-top: 20px; 
-    width: 100%; 
-    max-width: 200px; 
-    text-align: center; 
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
 }
 
 /* FEEDBACK */
 
 #feedback {
-        text-align: center; 
-        background-color: #0edbf6; 
-        border-radius: 15px;
+    text-align: center;
+    background-color: #0edbf6;
+    border-radius: 15px;
 }
 
 .feedbacks-container {
     padding: 30px;
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    flex-wrap: wrap; 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .feedbacks-todos {
-    width: auto; 
-    height: 300px; 
-    border-radius: 10px; 
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
- /* FORM */
-.form-text{
-    text-align: center;   
+/* FORM */
+.form-text {
+    text-align: center;
 }
 
-#Forms{
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     padding:30px 20px;
+#Forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
 }
 
-.form-menu{
+.form-menu {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding:30px 20px;
-    background-color: #FF3B30;
+    padding: 30px 20px;
+    background-color: #ff3b30;
     border-radius: 15px;
     color: #000000;
-    
 }
 
-#Forms input, #Forms select, #Forms textarea{
+#Forms input,
+#Forms select,
+#Forms textarea {
     padding: 10px;
     border-radius: 15px;
     border: 1px solid #000000;
     font-weight: bold;
 }
 
-.textos-cima-form{
+.textos-cima-form {
     text-align: center;
     font-weight: bold;
 }
 
-#Forms button{
+#Forms button {
     padding: 10px;
     border-radius: 15px;
     border: none;
@@ -422,21 +443,21 @@ html{
     cursor: pointer;
 }
 
-#Forms button:hover{
+#Forms button:hover {
     color: #0edbf6;
     background-color: #000000;
 }
 
- /* FOOTER */
+/* FOOTER */
 
 #footer {
-    background-color: #000000; 
-    color: #0edbf6; 
-    text-align: center; 
-    padding: 30px 20px; 
-    margin-top: 40px; 
-    width: 100%; 
-    position: relative; 
+    background-color: #000000;
+    color: #0edbf6;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
 }
 
 .contato-titulo {
@@ -446,7 +467,7 @@ html{
 
 .contato-info {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
 }
 
@@ -457,13 +478,13 @@ html{
 }
 
 .icone {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    overflow: hidden; 
-    display: block; 
-    border: 2px solid #0edbf6; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+    border: 2px solid #0edbf6;
 }
 
 .contato-item {
@@ -473,15 +494,235 @@ html{
 }
 
 .contato-item a {
-    color: #0edbf6; 
-    text-decoration: none; 
+    color: #0edbf6;
+    text-decoration: none;
     font-size: 16px;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 
 .contato-item a:hover {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
 }
 
+/* MENU FLUTUANTE RESPONSIVO */
+.responsive-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0;
+    transition: box-shadow 0.2s;
+    min-width: 48px;
+}
 
-  
+.responsive-menu.closed .responsive-options {
+    display: none;
+}
+
+.responsive-menu .responsive-toggle {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px 0 0 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.responsive-menu .responsive-toggle:hover,
+.responsive-menu .responsive-toggle:focus {
+    background: #005fa3;
+}
+
+.responsive-menu .responsive-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px 8px 8px;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.responsive-menu .responsive-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #1e90ff;
+    margin-bottom: 4px;
+}
+
+.responsive-menu button:not(.responsive-toggle) {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    outline: none;
+}
+
+.responsive-menu button:not(.responsive-toggle):hover,
+.responsive-menu button:not(.responsive-toggle):focus {
+    background: #005fa3;
+    transform: scale(1.08);
+}
+
+/* Dark mode support (opcional) */
+body.dark .responsive-menu {
+    background: #222;
+}
+
+body.dark .responsive-menu .responsive-toggle,
+body.dark .responsive-menu button:not(.responsive-toggle) {
+    background: #444;
+    color: #fff;
+}
+
+body.dark .responsive-menu .responsive-toggle:hover,
+body.dark .responsive-menu button:not(.responsive-toggle):hover {
+    background: #1e90ff;
+}
+
+body.dark .responsive-menu .responsive-title {
+    color: #00c3ff;
+}
+
+/* Google Maps Section */
+.google-maps-api {
+    background: #f7fafd;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    margin: 40px auto 0 auto;
+    padding: 24px 10px 32px 10px;
+    max-width: 700px;
+    color: #000; /* Garante texto escuro no fundo claro */
+}
+.google-maps-api .maps-container {
+    margin-top: 10px;
+}
+.button-maps {
+    background: linear-gradient(90deg, #1e90ff 0%, #0edbf6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 16px rgba(30, 144, 255, 0.15);
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.button-maps:hover {
+    background: linear-gradient(90deg, #0edbf6 0%, #1e90ff 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Corrige contraste no modo dark para a seção Google Maps */
+body.dark .google-maps-api {
+    background: #181c1f;
+    color: #fff;
+}
+body.dark .google-maps-api h2,
+body.dark .google-maps-api .nossos-titulo {
+    color: #0edbf6;
+}
+body.dark .google-maps-api a,
+body.dark .google-maps-api p,
+body.dark .google-maps-api label {
+    color: #fff;
+}
+
+/* Responsividade extra para mobile */
+@media (max-width: 900px) {
+    .nossos-caixa {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .cta-delivery {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .img-delivery {
+        margin: 0 0 16px 0;
+        width: 90vw;
+        max-width: 350px;
+    }
+    .feedbacks-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+    }
+    .prod-vendas,
+    .prod-acesso,
+    .prod-conserto {
+        width: 95vw;
+        max-width: 350px;
+        min-height: unset;
+        height: auto;
+    }
+    .nossos-produtos {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .Quem-somos {
+        padding: 24px 4vw;
+    }
+    .google-maps-api {
+        padding: 16px 2vw 24px 2vw;
+    }
+}
+
+/* Acessibilidade: foco visível para botões e links */
+button:focus,
+a:focus {
+    outline: 2px solid #ff3b30;
+    outline-offset: 2px;
+}
+
+/* Barra de rolagem estilizada */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #e0f7fa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0edbf6 40%, #1e90ff 100%);
+    border-radius: 8px;
+    border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #1e90ff 0%, #0edbf6 100%);
+}
+
+::-webkit-scrollbar-corner {
+    background: #e0f7fa;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #0edbf6 #e0f7fa;
+}

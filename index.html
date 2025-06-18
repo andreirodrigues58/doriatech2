@@ -39,7 +39,9 @@
         <div id="quem-so" class="Quem-somos">
             <h1 class="quem-titulo"> <strong>Quem Somos</strong></h1>
             <img src="img/divcelular-removebg-preview.png" alt="celular" class="celular-div">
-            <div class="quem-caixa">
+            <!-- Imagem da fachada da loja abaixo do ícone de celular -->
+            <img src="img/fachada-doriatech.jpg" alt="Fachada da loja Doria Tech" class="fachada-img" style="width:100%;max-width:500px;display:block;margin:16px auto 0 auto;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+            <div class="quem-caixa" style="margin-top:18px;">
                 <p>
                     A Doria Tech é especializada em assistência técnica, venda de celulares e acessórios. 
                     <br>Oferecemos consertos rápidos e seguros, além de uma variedade de produtos para manter seu smartphone sempre em perfeito estado. 
@@ -223,7 +225,24 @@
                     <button type="submit">Enviar Solicitação</button>
               </form>
     </section>
-
+    <section class="google-maps-api">
+        <h2 class="nossos-titulo">Confira nossa loja</h2>
+        <div class="maps-container">
+            <img src="img/divcelular-removebg-preview.png" alt="divisao-celular" class="celular-div">
+            <div style="width:100%;max-width:600px;margin:auto;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3727.047607800963!2d-38.42000068468492!3d-12.97304099085759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161acb7e9c8b6b%3A0x2e2e2e2e2e2e2e!2sRua%20Professor%20Pinto%20de%20Aguiar%2C%2014%20-%20Boca%20do%20Rio%2C%20Salvador%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1718040000000!5m2!1spt-BR!2sbr"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div style="text-align:center;margin-top:10px;">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Professor+Pinto+de+Aguiar,+14,+Boca+do+Rio,+Salvador+-+BA"
+                   target="_blank" rel="noopener noreferrer">
+                    <button type="button" class="button-cards button-maps">Trace uma Rota</button>
+                </a>
+            </div>
+        </div>
+    </section>
     <footer id="footer">
         <h2 class="contato-titulo">Contatos</h2>
         <h3 class="dark-h3"> Localização:<br>Rua Professor Pinto de Aguiar, 14 <br> Boca do Rio, Salvador - BA</h3> <br>
@@ -259,7 +278,115 @@
         </div>
     </section>
 
+    <!-- Menu de Responsividade Flutuante Retrátil -->
+    <div id="responsive-menu" class="responsive-menu closed" aria-label="Acessibilidade e Opções" tabindex="0">
+        <button id="responsive-toggle" class="responsive-toggle" title="Abrir opções de acessibilidade" aria-label="Abrir opções">
+            <!-- Ícone de pessoa (stick figure) SVG para acessibilidade -->
+            <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
+                <circle cx="14" cy="6" r="3" fill="#fff"/>
+                <rect x="12.5" y="9" width="3" height="8" rx="1.2" fill="#fff"/>
+                <rect x="6" y="11" width="16" height="2.2" rx="1.1" fill="#fff"/>
+                <rect x="10" y="17" width="2" height="6" rx="1" fill="#fff"/>
+                <rect x="16" y="17" width="2" height="6" rx="1" fill="#fff"/>
+            </svg>
+        </button>
+        <div class="responsive-options">
+            <span class="responsive-title">Acessibilidade</span>
+            <button id="font-inc" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+            <button id="font-dec" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <button id="font-reset" title="Fonte padrão" aria-label="Fonte padrão">A</button>
+            <button id="tts-toggle" title="Ler página em voz alta" aria-label="Ler página">🔊</button>
+        </div>
+    </div>
+
     <script src="doriajava.js"></script>
     <script src="responsiv.js"></script>
+    <script>
+    // Responsividade: ajuste de fonte e menu retrátil
+    (function() {
+        const html = document.documentElement;
+        let fontSize = 100;
+        const minFont = 80, maxFont = 140, step = 10;
+
+        function setFont(size) {
+            html.style.fontSize = size + '%';
+        }
+
+        document.getElementById('font-inc').onclick = function() {
+            if (fontSize < maxFont) {
+                fontSize += step;
+                setFont(fontSize);
+            }
+        };
+        document.getElementById('font-dec').onclick = function() {
+            if (fontSize > minFont) {
+                fontSize -= step;
+                setFont(fontSize);
+            }
+        };
+        document.getElementById('font-reset').onclick = function() {
+            fontSize = 100;
+            setFont(fontSize);
+        };
+
+        // Text-to-Speech para acessibilidade
+        let speaking = false;
+        const ttsBtn = document.getElementById('tts-toggle');
+        ttsBtn.onclick = function() {
+            if (!speaking) {
+                const mainContent = document.body.cloneNode(true);
+                const menu = mainContent.querySelector('#responsive-menu');
+                if (menu) menu.remove();
+                mainContent.querySelectorAll('script, nav, button, style').forEach(e => e.remove());
+                const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
+                if (text) {
+                    const utter = new window.SpeechSynthesisUtterance(text);
+                    utter.lang = 'pt-BR';
+                    speaking = true;
+                    ttsBtn.textContent = '⏹️';
+                    window.speechSynthesis.speak(utter);
+                    utter.onend = utter.onerror = function() {
+                        speaking = false;
+                        ttsBtn.textContent = '🔊';
+                    };
+                }
+            } else {
+                window.speechSynthesis.cancel();
+                speaking = false;
+                ttsBtn.textContent = '🔊';
+            }
+        };
+
+        // Menu retrátil
+        const menu = document.getElementById('responsive-menu');
+        const toggleBtn = document.getElementById('responsive-toggle');
+        const options = menu.querySelector('.responsive-options');
+        toggleBtn.onclick = function(e) {
+            menu.classList.toggle('closed');
+            if (!menu.classList.contains('closed')) {
+                toggleBtn.title = "Fechar opções de acessibilidade";
+                toggleBtn.setAttribute('aria-label', "Fechar opções");
+            } else {
+                toggleBtn.title = "Abrir opções de acessibilidade";
+                toggleBtn.setAttribute('aria-label', "Abrir opções");
+            }
+        };
+        // Fecha o menu ao clicar fora dele
+        document.addEventListener('click', function(e) {
+            if (!menu.contains(e.target) && !menu.classList.contains('closed')) {
+                menu.classList.add('closed');
+                toggleBtn.title = "Abrir opções de acessibilidade";
+                toggleBtn.setAttribute('aria-label', "Abrir opções");
+            }
+        });
+        // Acessibilidade: abre com Enter/Espaço
+        toggleBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleBtn.click();
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
